@@ -64,7 +64,7 @@ const Upload: React.FC<Props> = ({ dataFileList: [fileList, setFileList], parent
 
     // notification.info({ key: 'prepareToUpload', message: 'Preparing...', duration: 3 })
     // await new Promise(res => setTimeout(res, 3000))
-    
+
     const MAX_UPLOAD_SIZE = await (await req.get('/auth/me')).data.user.premium ? DEFAULT_MAX_UPLOAD_SIZE*2 : DEFAULT_MAX_UPLOAD_SIZE
     const fileParts = Math.ceil(file.size / MAX_UPLOAD_SIZE)
     let deleted = false
